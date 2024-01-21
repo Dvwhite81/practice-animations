@@ -1,9 +1,7 @@
-import 'the-new-css-reset/css/reset.css';
-import '../styles/style.css';
+import animate1 from './ball-1';
+import animate2 from './ball-2';
+import animate3 from './ball-3';
 
-const container = document.querySelector('#container');
-
-const h1 = document.createElement('h1');
-h1.textContent = 'SETUP';
-
-container.append(h1);
+animate1();
+animate2();
+animate3();

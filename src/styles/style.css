@@ -1,31 +1,7 @@
-/*@import './header.css';*/
-
-@font-face {
-    font-family: 'roboto';
-    src: url('../assets/fonts/Roboto-Thin.ttf');
-    font-weight: 200;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('../assets/fonts/Roboto-Medium.ttf');
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('../assets/fonts/Roboto-Bold.ttf');
-    font-weight: 900;
-    font-display: swap;
+:root {
+  --square-size: calc(100vh / 2);
+  --half-size: calc(var(--square-size) / 2);
+  --orbit-size: calc(var(--half-size) / 2);
 }
 
 * {
@@ -35,39 +11,58 @@
     padding: 0;
 }
 
-:root {
-  --sidebar-width: 20vw;
-  --board-height: 75vh;
-  --board-width: 60vw;
-  --card-height: calc((var(--board-height) * 0.8) / 3);
-  --card-width: calc((var(--board-width) * 0.8) / 8);
-  --blue-bg: #065094;
-  --red-bg: #d2202f;
-  --light-blue-bg: skyblue;
-}
-
-.hide {
-  display: none !important;
-}
-
-.two-columns {
-  grid-template-columns: 2fr 3fr !important;
-}
-
-.double-width {
-  width: calc(var(--sidebar-width) * 2) !important;
-}
-
-/* Main container */
-#container {
-  background-color: var(--light-blue-bg);
+body {
   display: grid;
-  grid-template-rows: 15vh 85vh;
-  height: 100vh;
-  width: 100vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-#game-container {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+.container {
+  height: 50vh;
+  width: 50vw;
+}
+
+#black {
+  background-color: black;
+}
+
+#red {
+  background-color: red;
+}
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: lightblue;
+}
+
+.ball {
+  border-radius: 25px;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+
+#ball-1 {
+  background-color: rebeccapurple;
+}
+
+#ball-2 {
+  background-color: white;
+}
+
+#ball-3 {
+  background-color: blue;
+}
+
+#ball-4 {
+  animation: orbit 2s linear infinite;
+  background-color: black;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-size)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-size)) rotate(-360deg); }
 }

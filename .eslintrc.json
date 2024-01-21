@@ -36,6 +36,7 @@
     ],
     "import/no-cycle": "off",
     "no-restricted-syntax": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-use-before-define": "off"
   }
 }

@@ -1,3 +1,3 @@
-# vite-template
+# practice-animations
 
-Vite Template
+Four different animations, three using JavaScript and one using CSS.
